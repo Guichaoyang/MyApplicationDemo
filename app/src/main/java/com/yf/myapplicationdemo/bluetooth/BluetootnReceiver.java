@@ -51,7 +51,7 @@ public class BluetootnReceiver extends BroadcastReceiver {
 		if (BluetoothDevice.ACTION_FOUND.equals(action)) {
 			device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 			// System.out.println(device.getName());
-			if ("易关怀".equals(device.getName())) {
+			if ("蓝牙设备名称".equals(device.getName())) {
 				// 搜索蓝牙设备的过程占用资源比较多，一旦找到需要连接的设备后需要及时关闭搜索
 				adapter.cancelDiscovery();
 				// 获取蓝牙设备的连接状态
@@ -61,7 +61,7 @@ public class BluetootnReceiver extends BroadcastReceiver {
 		} else if (BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)) {
 			// 状态改变的广播
 			device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-			if ("易关怀".equals(device.getName())) {
+			if ("蓝牙设备名称".equals(device.getName())) {
 				// adapter.cancelDiscovery();// 停止搜索
 				switch (device.getBondState()) {
 				case BluetoothDevice.BOND_BONDING:// 正在配对
