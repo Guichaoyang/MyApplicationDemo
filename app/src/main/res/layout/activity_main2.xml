@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yf.myapplicationdemo.fragment.Main2Activity">
+
+    <fragment
+        android:id="@+id/id_fragment_title2"
+        android:name="com.yf.myapplicationdemo.fragment.TitleFragment"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <include
+        android:id="@+id/id_ly_botoombar"
+        layout="@layout/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true" />
+
+    <FrameLayout
+        android:id="@+id/ly_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/id_ly_botoombar"
+        android:layout_below="@id/id_fragment_title2" />
+</RelativeLayout>
